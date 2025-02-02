@@ -2,61 +2,66 @@ import React from "react";
 import { useState } from "react";
 import "../App.css"
 
-const images = [
+const promptImages = [
+  "7.png",
+  "8.png",
+  "9.png",
+  "10.png",
+  "11.png",
+  "12.png"
+];
+
+const completedImages = [
   "1.png",
   "2.png",
   "3.png",
   "4.png",
+  "5.png",
+  "6.png"
 ];
 
 const PromptGenerator = () => {
-  // const prompts = [
-  //   "Try a new sustainability challenge!",
-  //   "Share an item with a neighbor!",
-  //   "Upcycle something today!",
-  //   "Join a community clean-up event!",
-  // ];
 
-  const [currentImage, setCurrentImage] = useState(images[0]);
+  const [currentImage, setCurrentImage] = useState(promptImages[0]);
+  const [completed, setCompleted] = useState(false);
 
-  const getRandomImage = () => {
-      const randomIndex = Math.floor(Math.random() * images.length);
-      setCurrentImage(images[randomIndex]);
+  const generatePrompt = () => {
+      const randomIndex = Math.floor(Math.random() * promptImages.length);
+      setCurrentImage(promptImages[randomIndex]);
+      setCompleted(false); // Reset completion state
+  };
+
+  const logAsComplete = () => {
+    const index = promptImages.findIndex(
+        (img) => img === currentImage
+    );
+    setCurrentImage(completedImages[index]); // Switch to completed image
+    setCompleted(true);
   };
 
   return (
-    
-      <div className="container">
-              <img 
-                  src={currentImage} alt="Random" className="rounded-lg shadow-md mb-4" 
-              />
-              <button
-                  onClick={getRandomImage}
-                  className="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600"
-              >
-                 Regenerate!
-              </button>
-      </div>
+    <div className="flex flex-col items-center p-6 bg-white shadow-lg rounded-lg">
+    <img
+        src={currentImage}
+        alt={currentImage}
+        className={`w-full h-48 rounded-lg mb-4`}
+    />
+    <div className="flex space-x-4">
+        <button
+            onClick={generatePrompt}
+            className="px-6 py-3 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600 transition duration-300 ease-in-out"
+        >
+            Generate Prompt
+        </button>
+        <button
+            onClick={logAsComplete}
+            className="px-6 py-3 bg-green-500 text-white rounded-full shadow-md hover:bg-green-600 transition duration-300 ease-in-out"
+        >
+            Log as Complete
+        </button>
+    </div>
+</div>
   );
-  
-  // const [prompt, setPrompt] = useState(prompts[0]);
-
-  // const generatePrompt = () => {
-  //   const randomIndex = Math.floor(Math.random() * prompts.length);
-  //   setPrompt(prompts[randomIndex]);
-  // };
-
-  // return (
-  //   <div className="flex flex-col items-center justify-center p-4">
-  //     <p className="text-lg font-semibold mb-4">{prompt}</p>
-  //     <button
-  //       onClick={generatePrompt}
-  //       className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
-  //     >
-  //       Generate New Prompt
-  //     </button>
-  //   </div>
-  // );
 };
 
 export default PromptGenerator;
