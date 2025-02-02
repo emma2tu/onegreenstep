@@ -4,8 +4,11 @@ export function Home ()
 {
     return (
         <>
-        <h1>OneGreenStep</h1>
-        <p>Making an impact one sustainable action at a time!</p>
+        {/* This is where your test text appears */}
+        <div className="bubblegum-sans-regular">
+            <h1>OneGreenStep</h1>
+            <p>Making an impact one sustainable action at a time!</p>
+          </div>
         <PromptGenerator />
         </>
     )
