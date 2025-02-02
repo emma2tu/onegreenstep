@@ -103,15 +103,6 @@ nav a:hover {
   justify-content: center;
 }
 
-
-To add spacing between the buttons using regular CSS instead of Tailwind classes, you can update your CSS file to include custom styles.
-
-Here’s how you can update the App.css or HomePage.css file to add space between the buttons:
-
-Updated App.css
-css
-Copy
-Edit
 /* App.css */
 body {
     font-family: Arial, sans-serif;
