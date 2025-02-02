@@ -5,8 +5,8 @@ export function Home ()
     return (
         <>
         <PromptGenerator />
-        <h1>Home</h1>
-        <p>Welcome to the home page!</p>
+        <h1>OneGreenStep</h1>
+        <p>Making an impact one sustainable action at a time!</p>
         </>
     )
 }
