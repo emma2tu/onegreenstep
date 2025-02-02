@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 // import { Home, About} from './pages';
 import { Home } from './pages/Home';
+import Chatbot from './pages/Chat';
 import { Archive } from './pages/Archive';
 import { useEffect } from 'react';
 import "./App.css"
@@ -25,6 +26,7 @@ const App = () => {
               <Routes>
                   <Route path="/" element={<Home />}/>
                   <Route path="/archive" element={<Archive />}/>
+                  <Route path="/chat" element={<Chatbot />} />
               </Routes>
             </div>
 
