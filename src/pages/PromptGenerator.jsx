@@ -41,26 +41,27 @@ const PromptGenerator = () => {
 
   return (
     <div className="flex flex-col items-center p-6 bg-white shadow-lg rounded-lg">
-    <img
-        src={currentImage}
-        alt={currentImage}
-        className={`w-full h-48 rounded-lg mb-4`}
-    />
-    <div className="flex space-x-4">
-        <button
-            onClick={generatePrompt}
-            className="px-6 py-3 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600 transition duration-300 ease-in-out"
-        >
-            Generate Prompt
-        </button>
-        <button
-            onClick={logAsComplete}
-            className="px-6 py-3 bg-green-500 text-white rounded-full shadow-md hover:bg-green-600 transition duration-300 ease-in-out"
-        >
-            Log as Complete
-        </button>
+        <img
+            src={currentImage}
+            alt={currentImage}
+            className={`w-full h-48 rounded-lg mb-4`}
+        />
+        {/* Added custom class for button container */}
+        <div className="button-container">
+            <button
+                onClick={generatePrompt}
+                className="px-6 py-3 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600 transition duration-300 ease-in-out"
+            >
+                Generate Prompt
+            </button>
+            <button
+                onClick={logAsComplete}
+                className="px-6 py-3 bg-green-500 text-white rounded-full shadow-md hover:bg-green-600 transition duration-300 ease-in-out"
+            >
+                Log as Complete
+            </button>
+        </div>
     </div>
-</div>
   );
 };
 
