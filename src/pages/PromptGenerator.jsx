@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const images = [
-  "public/1.png",
-  "public/2.png",
-  "public/3.png",
-  "public/4.png",
+  "1.png",
+  "2.png",
+  "3.png",
+  "4.png",
 ];
 
 const PromptGenerator = () => {
@@ -25,12 +25,12 @@ const PromptGenerator = () => {
   return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
           <div className="p-4 bg-white shadow-lg rounded-lg">
-              <img src={currentImage} alt="Random" className="rounded-lg shadow-md" />
+              <img src={currentImage} alt="Random" className="bigleaf" />
               <button
                   onClick={getRandomImage}
                   className="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600"
               >
-                  Show Random Image
+                  Generate Sustainable Challenge!
               </button>
           </div>
       </div>
