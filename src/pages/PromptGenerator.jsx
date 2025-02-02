@@ -22,7 +22,7 @@ const completedImages = [
 
 const PromptGenerator = () => {
 
-  const [currentImage, setCurrentImage] = useState(promptImages[0]);
+  const [currentImage, setCurrentImage] = useState("intor.png");
   const [completed, setCompleted] = useState(false);
 
   const generatePrompt = () => {
