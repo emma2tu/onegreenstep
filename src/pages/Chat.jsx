@@ -10,7 +10,7 @@ const Chatbot = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium",
+        "https://api-inference.huggingface.co/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
         { inputs: message },
         {
           headers: { Authorization: `Bearer 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` },
