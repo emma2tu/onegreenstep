@@ -56,7 +56,7 @@ main {
 }
 
 nav {
-  width: 10rem;
+  width: 12rem;
   height: 100%;
   background-color: rgb(143, 160, 143);
   left: 0;
@@ -73,7 +73,7 @@ nav {
 
 nav ul {
   list-style-type: none;
-  margin: 0;
+  margin: 50;
   padding: 0;
 }
 
@@ -85,7 +85,9 @@ nav li {
 nav a:hover {
   color: rgb(8, 136, 8);
 }
-
+.challenge {
+  margin-top: 50px;  /* Adjust this value to move it further down */
+}
 .content {
   left: 10rem;
   position: absolute;
