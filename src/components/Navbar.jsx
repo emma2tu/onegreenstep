@@ -20,7 +20,7 @@ const Navbar = () => {
             to="/archive"
             className=""
           >
-            My Vine
+            Leaf Gallery
           </NavLink></li>
         </ul>        
       </nav>
