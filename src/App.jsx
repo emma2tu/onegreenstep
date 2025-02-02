@@ -1,7 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 // import { Home, About} from './pages';
 import { Home } from './pages/Home';
+import { Archive } from './pages/Archive';
 import { useEffect } from 'react';
 
 const App = () => {
@@ -17,11 +18,10 @@ const App = () => {
   return (
     <main style={{ backgroundColor: '#171717', height: '100vh', width: '100vw' }}>
         <Router>
-            {/* <Navbar /> */}
+            <Navbar />
             <Routes>
                 <Route path="/" element={<Home />}/>
-               
-
+                <Route path="/archive" element={<Archive />}/>
             </Routes>
 
             {/* <Footer /> */}
@@ -31,3 +31,5 @@ const App = () => {
 }
 
 export default App
+
+
