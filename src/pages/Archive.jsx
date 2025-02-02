@@ -1,37 +1,37 @@
-import React from "react";
-import { useState } from "react";
-export function Archive ()
-{
-    const colorImageURLs = [
-        "1.png",
-        "2.png",
-        "3.png",
-        "4.png",
-        "5.png",
-        "6.png",
-    ];
+import React, { useState, useEffect } from "react";
 
-    var printImageURLs = [
-        "7.png",
-        "8.png",
-        "9.png",
-        "10.png",
-        "11.png",
-        "12.png"
-    ];
+export function Archive() {
+    // Gray and colored image lists
+    const colorImageURLs = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"];
+    const promptImageURLs = ["7.png", "8.png", "9.png", "10.png", "11.png", "12.png"];
+
+    const [completedLeaves, setCompletedLeaves] = useState([]);
+
+    // Load completed tasks from localStorage when the page loads
+    useEffect(() => {
+        const storedCompleted = JSON.parse(localStorage.getItem("completedPrompts")) || [];
+        setCompletedLeaves(storedCompleted);
+        console.log("Completed Prompts: ", storedCompleted );
+    }, []);
 
     return (
         <>
-        <h1>Leaf Gallery</h1>
-        <p>Welcome to the leaf gallery! See your past accomplishments here!</p>
-        <section class="leaves">
-            <article><img class="image" src={printImageURLs[0]}></img></article>
-            <article><img class="image" src={printImageURLs[1]}></img></article>
-            <article><img class="image" src={printImageURLs[2]}></img></article>
-            <article><img class="image" src={printImageURLs[3]}></img></article>
-            <article><img class="image" src={printImageURLs[4]}></img></article>
-            <article><img class="image" src={printImageURLs[5]}></img></article>
-        </section>
+            <h1>Leaf Gallery</h1>
+            <p>Welcome to the leaf gallery! See your past accomplishments here!</p>
+            <section className="leaves">
+                {promptImageURLs.map((image, index) => {
+                    // Check if THIS image is in the completed list
+                    const isCompleted = completedLeaves.includes(image);
+                    const displayedImage = isCompleted ? colorImageURLs[index] : promptImageURLs[index];
+
+                    return (
+                        <article key={index}>
+                            <img className="image" src={`/${displayedImage}`} alt={`Leaf ${index}`} />
+                        </article>
+                    );
+                })}
+            </section>
+
         </>
-    )
+    );
 }

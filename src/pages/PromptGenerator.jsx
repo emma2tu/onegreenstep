@@ -37,7 +37,14 @@ const PromptGenerator = () => {
     );
     setCurrentImage(completedImages[index]); // Switch to completed image
     setCompleted(true);
-  };
+
+  // Save the completed prompt to localStorage
+  let completedPrompts = JSON.parse(localStorage.getItem("completedPrompts")) || [];
+  if (!completedPrompts.includes(currentImage)) {
+    completedPrompts.push(currentImage); // Store the gray leaf image
+    localStorage.setItem("completedPrompts", JSON.stringify(completedPrompts));
+  }
+};
 
   return (
     <div className="flex flex-col items-center p-6 bg-white shadow-lg rounded-lg">
