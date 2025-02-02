@@ -11,7 +11,17 @@ export function Archive() {
     useEffect(() => {
         const storedCompleted = JSON.parse(localStorage.getItem("completedPrompts")) || [];
         setCompletedLeaves(storedCompleted);
-        console.log("Completed Prompts: ", storedCompleted );
+    
+        // Clear localStorage only when the page is fully loaded
+        window.addEventListener("beforeunload", () => {
+            localStorage.removeItem("completedPrompts");
+        });
+    
+        return () => {
+            window.removeEventListener("beforeunload", () => {
+                localStorage.removeItem("completedPrompts");
+            });
+        };
     }, []);
 
     return (
