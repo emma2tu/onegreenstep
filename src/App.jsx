@@ -5,6 +5,8 @@ import { Home } from './pages/Home';
 import { Archive } from './pages/Archive';
 import { useEffect } from 'react';
 import "./App.css"
+import PromptGenerator from "./PromptGenerator";
+
 
 const App = () => {
 
