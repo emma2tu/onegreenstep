@@ -14,13 +14,13 @@ const Navbar = () => {
             to="/"
             className=""
           >
-            Home
+            Challenge
           </NavLink></li>
           <li><NavLink
             to="/archive"
             className=""
           >
-            Archive
+            My Vine
           </NavLink></li>
         </ul>        
       </nav>

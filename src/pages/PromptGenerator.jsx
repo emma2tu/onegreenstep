@@ -1,4 +1,6 @@
+import React from "react";
 import { useState } from "react";
+import "../App.css"
 
 const images = [
   "1.png",
@@ -23,16 +25,17 @@ const PromptGenerator = () => {
   };
 
   return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-          <div className="p-4 bg-white shadow-lg rounded-lg">
-              <img src={currentImage} alt="Random" className="bigleaf" />
+    
+      <div className="container">
+              <img 
+                  src={currentImage} alt="Random" className="rounded-lg shadow-md mb-4" 
+              />
               <button
                   onClick={getRandomImage}
                   className="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600"
               >
                   Generate Sustainable Challenge!
               </button>
-          </div>
       </div>
   );
   
