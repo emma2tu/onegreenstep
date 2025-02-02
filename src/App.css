@@ -50,6 +50,11 @@ main {
 
 
 /* Navbar */
+.navbar {
+  background-color: #8b9e91; /* Light background */
+  padding: 12px 20px;
+}
+
 nav {
   width: 10rem;
   height: 100%;
@@ -57,6 +62,13 @@ nav {
   left: 0;
   top: 0;
   position: absolute;
+}
+.brand {
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: #e0e0e0;
+  padding: .5px 5px;
+  border-radius: 50px;
 }
 
 nav ul {
@@ -67,7 +79,7 @@ nav ul {
 
 nav li {
   padding: 0.5rem;
-  color: black;
+  color: rgb(22, 79, 14);
 }
 
 nav a:hover {

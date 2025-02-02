@@ -2,29 +2,15 @@ import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-
   return (
-    <>
-      {/* Main Navbar */}
-      <nav>
-        {/* Desktop Navigation */}
-        <ul>
-          <li>One Green Step</li>
-          <li><NavLink
-            to="/"
-            className=""
-          >
-            Challenge
-          </NavLink></li>
-          <li><NavLink
-            to="/archive"
-            className=""
-          >
-            Leaf Gallery
-          </NavLink></li>
-        </ul>        
-      </nav>
-    </>
+    <nav className="navbar">
+      {/* Desktop Navigation */}
+      <ul className="nav-list">
+        <li className="brand">One Green Step</li>
+        <li><NavLink to="/" className="nav-link">Challenge</NavLink></li>
+        <li><NavLink to="/archive" className="nav-link">Leaf Gallery</NavLink></li>
+      </ul>        
+    </nav>
   );
 };
 
