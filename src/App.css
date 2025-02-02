@@ -13,7 +13,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #1b336caa);
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -122,13 +122,13 @@ button {
 }
 
 button:hover {
-    background-color: #34516f;
+    background-color: #29425b;
     transform: scale(1.05);
 }
 
 /* Button colors */
 button:nth-child(1) {
-    background-color: #205375;
+    background-color: #195075;
     color: white;
 }
 
