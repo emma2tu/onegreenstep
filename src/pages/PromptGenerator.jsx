@@ -34,7 +34,7 @@ const PromptGenerator = () => {
                   onClick={getRandomImage}
                   className="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600"
               >
-                  Generate Sustainable Challenge!
+                 Regenerate!
               </button>
       </div>
   );
