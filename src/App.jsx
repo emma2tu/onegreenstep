@@ -4,25 +4,28 @@ import Navbar from './components/Navbar';
 import { Home } from './pages/Home';
 import { Archive } from './pages/Archive';
 import { useEffect } from 'react';
+import "./App.css"
 
 const App = () => {
 
   useEffect(() => {
     // Apply background color to the body when the component mounts
-    document.body.style.backgroundColor = '#171717';
+    // document.body.style.backgroundColor = '#171717';
     // document.body.style.margin = '0'; // Optional: reset any default body margin
     // document.body.style.padding = '0'; // Optional: reset any default body padding
-    document.body.style.height = '100%'; // Make sure it fills the screen
+    // document.body.style.height = '100%'; // Make sure it fills the screen
   }, []);
 
   return (
-    <main style={{ backgroundColor: '#171717', height: '100vh', width: '100vw' }}>
+    <main>
         <Router>
             <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path="/archive" element={<Archive />}/>
-            </Routes>
+            <div className='content'>
+              <Routes>
+                  <Route path="/" element={<Home />}/>
+                  <Route path="/archive" element={<Archive />}/>
+              </Routes>
+            </div>
 
             {/* <Footer /> */}
         </Router>
